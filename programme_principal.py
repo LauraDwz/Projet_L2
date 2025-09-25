@@ -1,3 +1,10 @@
+import logging
+
+logging.basicConfig(
+    filename="mon_jeu.log",
+    level=logging.DEBUG,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
 import pygame
 from map import Map
 from constantes import *
