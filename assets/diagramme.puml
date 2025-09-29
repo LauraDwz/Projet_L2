@@ -1,0 +1,65 @@
+@startuml Diagramme de classe Projet L2
+
+package model {
+
+    class Game
+
+    class Map {
+        - int nb_boxes_width
+        - int nb_boxes_height
+        - int width
+        - int height
+        - list<PathBox> path_boxes
+        - list<DecorBox> decor_boxes
+        - list<UnitBox> unit_boxes
+        - Map init()
+    }
+
+    class Unit 
+
+    class Monster
+
+    class Box {
+        - int x 
+        - int y 
+        - str image
+        - Box init()
+    }
+
+    class UnitBox {
+        - UnitBox init()
+    }
+    class DecorBox {
+        - DecorBox init(couple_x_y)
+    }
+    class PathBox
+
+}
+
+package view {
+
+    class GameView
+
+}
+
+package controller {
+
+    class GameController
+
+}
+
+Game "1" -- "1" GameView : has
+Game "1" -- "1" GameController : has
+
+Game "1" -- "1" Map : has
+
+Map "1" -- "*" Unit : has
+Map "1" -- "*" Monster : has
+
+Map "1" -- "*" Box
+
+UnitBox --|> Box
+DecorBox --|> Box
+PathBox --|> Box
+
+@enduml

@@ -6,17 +6,11 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 import pygame
-from map import Map
-from constantes import *
-from affichage import afficher_carte
+from src.model.map import Map
+from src.utils.constantes import *
+from src.view.affichage import afficher_carte
 
-carte = Map(
-    niveau_1_largeur,
-    niveau_1_hauteur,
-    niveau_1_chemins,
-    niveau_1_decor,
-    niveau_1_unites,
-)
+carte = Map("../../assets/levels/level1.txt")
 
 pygame.display.init()
 fenetre = pygame.display.set_mode((carte.width, carte.height))

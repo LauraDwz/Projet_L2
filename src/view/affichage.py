@@ -1,4 +1,4 @@
-from constantes import COTE_CASE
+from src.utils.constantes import COTE_CASE
 import pygame
 
 
